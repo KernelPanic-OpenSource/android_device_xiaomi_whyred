@@ -229,8 +229,16 @@ on boot
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
-    write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
+    setprop vendor.usb.qdss.inst.name "qdss"
+    setprop vendor.usb.controller a800000.dwc3
     setprop sys.usb.configfs 1
+    write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
+
+on boot && property:persist.vendor.usb.controller.default=*
+    setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
+
+on property:vendor.usb.controller=*
+    setprop sys.usb.controller ${vendor.usb.controller}
 
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service
@@ -363,6 +371,7 @@ on property:vendor.post_boot.parsed=1
 on charger
     start qcom-post-boot
     start vendor.hvdcp_opti
+    setprop vendor.usb.controller a800000.dwc3
     setprop sys.usb.configfs 1
     start thermal-engine
     start vendor.power_off_alarm
