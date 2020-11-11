@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2018 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,19 +20,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
 # Enable updating of APEXes
-#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Inherit from whyred device
 $(call inherit-product, device/xiaomi/whyred/device.mk)
 
 # Inherit from custom vendor
-$(call inherit-product-if-exist, vendor/MiuiCamera/config.mk)
+# $(call inherit-product-if-exist, vendor/MiuiCamera/config.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/arrow/config/common.mk)
+$(call inherit-product, vendor/lineage/config/common.mk)
 
-DEVICE_MAINTAINER := Sreekanth
-PRODUCT_NAME := arrow_whyred
+# DEVICE_MAINTAINER := Sreekanth
+PRODUCT_NAME := lineage_whyred
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
@@ -53,5 +53,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 TARGET_VENDOR := Xiaomi
 IS_PHONE := true
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_GAPPS_ARCH := arm64
+# TARGET_GAPPS_ARCH := arm64
 TARGET_SCREEN_DENSITY := 440
