@@ -24,7 +24,7 @@
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 
 # Vendor properties
--include $(LOCAL_PATH)/vendor_prop.mk
+include $(LOCAL_PATH)/vendor_prop.mk
 
 # Dirac
 $(call inherit-product, vendor/xiaomi/whyred/dirac/dirac.mk)
@@ -34,12 +34,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage/lineage-sdk \
-    $(LOCAL_PATH)/overlay-lineage/packages/apps/Snap
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/xiaomi/whyred
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
@@ -526,7 +520,7 @@ PRODUCT_PACKAGES += \
     libmediaextractorservice \
     libnl
 
-#PRODUCT_BOOT_JARS += \
+PRODUCT_BOOT_JARS += \
     WfdCommon
 
 # Allow debug
