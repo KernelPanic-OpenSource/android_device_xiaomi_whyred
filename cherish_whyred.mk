@@ -27,7 +27,7 @@ TARGET_INCLUDE_WIFI_EXT := true
 CHERISH_BUILD_TYPE := FANMADE
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-CHERISH_WITHGAPPS=false
+CHERISH_NONGAPPS := true
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
