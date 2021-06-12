@@ -17,23 +17,18 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
+# $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common CherishOS stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
-
-# CherishOS Properties
-TARGET_INCLUDE_WIFI_EXT := true
-CHERISH_BUILD_TYPE := FANMADE
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-CHERISH_WITHGAPPS=true
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Inherit from custom vendor.
-$(call inherit-product, vendor/MiuiCamera/config.mk)
+# Google Apps
+$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
+$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
+$(call inherit-product-if-exists, vendor/apps/GoogleCamera/config.mk)
 
 PRODUCT_GENERIC_PROPERTIES += \
     ro.cherish.maintainer=dopaemon
