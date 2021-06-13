@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_whyred.mk
+    $(LOCAL_DIR)/nad_whyred.mk
 
 COMMON_LUNCH_CHOICES := \
-    cherish_whyred-user \
-    cherish_whyred-userdebug \
-    cherish_whyred-eng
+    nad_whyred-user \
+    nad_whyred-userdebug \
+    nad_whyred-eng

@@ -19,15 +19,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common CherishOS stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+# Inherit some common NusantaraROM stuff.
+$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
 
-# CherishOS Properties
-TARGET_INCLUDE_WIFI_EXT := true
-CHERISH_BUILD_TYPE := FANMADE
+# NusantaraROM Properties
+# TARGET_INCLUDE_WIFI_EXT := true
+NAD_BUILD_TYPE := UNOFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
-CHERISH_WITHGAPPS=true
+# TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_USES_BLUR := true
+USE_PIXEL_CHARGING := true
+USE_AOSP_CLOCK := true
+
+# Gapps
+TARGET_GAPPS_ARCH := arm64
+USE_GAPPS := false
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
