@@ -28,12 +28,16 @@ $(call inherit-product, device/xiaomi/whyred/device.mk)
 # Inherit some common lineage stuff.
 $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
+# Inherit from custom vendor.
+$(call inherit-product, vendor/MiuiCamera/config.mk)
+
 # CherishOS Properties
 TARGET_INCLUDE_WIFI_EXT := true
 CHERISH_BUILD_TYPE := FANMADE
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-CHERISH_NONGAPPS := true
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer=dopaemon
 
 # Whyred Properties
 PRODUCT_NAME := cherish_whyred
