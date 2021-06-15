@@ -1,4 +1,4 @@
-# 
+#
 # Copyright (C) 2018 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -242,8 +242,8 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 # Gcam
-PRODUCT_PACKAGES += \
-    GoogleCameraGo
+# PRODUCT_PACKAGES += \
+#     GoogleCameraGo
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
