@@ -19,15 +19,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common CherishOS stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+# Inherit some common LotusOS stuff.
+$(call inherit-product, vendor/lotus/config/common_full_phone.mk)
 
-# CherishOS Properties
+# LotusOS Properties
 TARGET_INCLUDE_WIFI_EXT := true
-CHERISH_BUILD_TYPE := FANMADE
+LOTUS_BUILD_TYPE := OFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
-CHERISH_NONGAPPS := true
+LOTUS_NONGAPPS := true
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
@@ -36,12 +36,12 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 $(call inherit-product, vendor/MiuiCamera/config.mk)
 
 PRODUCT_GENERIC_PROPERTIES += \
-    ro.cherish.maintainer=dopaemon
+    ro.lotus.maintainer=dopaemon
 
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := cherish_whyred
+PRODUCT_NAME := lotus_whyred
 PRODUCT_MODEL := Redmi Note 5
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
